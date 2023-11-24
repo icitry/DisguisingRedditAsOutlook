@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Reddit to Outlook",
+  "description": "The number one tool for any focused worker",
+  "version": "0.1.5",
+  "action": {
+    "default_popup": "./popup/popup.html"
+  },
+  "icons": {
+    "16": "./res/img/icon-16.png",
+    "32": "./res/img/icon-32.png",
+    "48": "./res/img/icon-48.png",
+    "64": "./res/img/icon-64.png",
+    "128": "./res/img/icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "scripts/content/public/build/bundle.js"
+      ],
+      "css": [
+        "scripts/content/public/build/bundle.css",
+        "scripts/content/static/styles/globals.css"
+      ],
+      "matches": [
+        "https://www.reddit.com/*"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'"
+  }
+}

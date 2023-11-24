@@ -1,0 +1,106 @@
+html {
+    width: 160px;
+    height: 75px;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+.main {
+    padding: 0 0 0.5rem 0; 
+}
+
+.separator {
+    background-color: #ccc;
+    width: 90%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 1px;
+    margin: 0.25rem 0;
+}
+
+.main .popup_title {
+    width: 90%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-weight: bold;
+}
+
+.outlook {
+    color: #0078d4;
+}
+
+.reddit {
+    color: #ff4500;
+}
+
+.toggle_option {
+    width: 90%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-top: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(17px);
+    -ms-transform: translateX(17px);
+    transform: translateX(17px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 22px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
